@@ -10,6 +10,57 @@ toc: true
 
 **Note:** This fork includes a fix for R 4.3+ compatibility ([issue #227](https://github.com/KrishnaswamyLab/MAGIC/issues/227)).
 
+## Installation from this fork
+
+### Step 1: Install the R package
+
+```r
+# Install devtools if needed
+if (!require(devtools)) install.packages("devtools")
+
+# Install Rmagic from this fork
+devtools::install_github("AnniceNajafi/MAGIC/Rmagic")
+```
+
+### Step 2: Install the Python dependencies
+
+After installing the R package, install the Python magic-impute package:
+
+```r
+library(Rmagic)
+install.magic()
+```
+
+**Important:** If you encounter a numpy compatibility error like:
+```
+ValueError: numpy.dtype size changed, may indicate binary incompatibility
+```
+
+You need to downgrade numpy to version 1.x. First, find your Python path:
+
+```r
+reticulate::py_config()
+```
+
+Then in your system terminal (Command Prompt/PowerShell on Windows, Terminal on Mac/Linux), run:
+
+```bash
+"<your-python-path>" -m pip install "numpy<2.0" --force-reinstall
+```
+
+Replace `<your-python-path>` with the `python:` path shown by `py_config()`.
+
+### Step 3: Restart R and test
+
+```r
+library(Rmagic)
+data(magic_testdata)
+data_MAGIC <- magic(magic_testdata, genes = c("VIM", "CDH1", "ZEB1"))
+summary(data_MAGIC)
+```
+
+---
+
 [![Latest PyPI version](https://img.shields.io/pypi/v/magic-impute.svg)](https://pypi.org/project/magic-impute/)
 [![Latest CRAN version](https://img.shields.io/cran/v/Rmagic.svg)](https://cran.r-project.org/package=Rmagic)
 [![GitHub Actions Build](https://img.shields.io/github/workflow/status/KrishnaswamyLab/MAGIC/Unit%20Tests/master?label=Github%20Actions)](https://github.com/KrishnaswamyLab/MAGIC/actions)
