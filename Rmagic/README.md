@@ -1,14 +1,5 @@
----
-title : Rmagic
-output: github_document
-toc: true
----
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
-
-**Note:** This fork includes a fix for R 4.3+ compatibility ([issue #227](https://github.com/KrishnaswamyLab/MAGIC/issues/227)).
+<h2>**Note:** This fork includes a fix for R 4.3+ compatibility ([issue #227](https://github.com/KrishnaswamyLab/MAGIC/issues/227)).</h2>
 
 ## Installation from this fork
 
