@@ -15,6 +15,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+**Note:** This fork includes a fix for R 4.3+ compatibility ([issue #227](https://github.com/KrishnaswamyLab/MAGIC/issues/227)).
+
 [![Latest PyPI version](https://img.shields.io/pypi/v/magic-impute.svg)](https://pypi.org/project/magic-impute/)
 [![Latest CRAN version](https://img.shields.io/cran/v/Rmagic.svg)](https://cran.r-project.org/package=Rmagic)
 [![GitHub Actions Build](https://img.shields.io/github/workflow/status/KrishnaswamyLab/MAGIC/Unit%20Tests/master?label=Github%20Actions)](https://github.com/KrishnaswamyLab/MAGIC/actions)

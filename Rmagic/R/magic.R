@@ -150,7 +150,7 @@ magic.default <- function(
   if (!methods::is(object = data, "Matrix")) {
     data <- as.matrix(x = data)
   }
-  if (length(genes) <= 1 && (is.null(x = genes) || is.na(x = genes))) {
+  if (is.null(genes) || (length(genes) == 1 && is.na(genes[1]))) {
     genes <- NULL
     gene_names <- colnames(x = data)
   } else if (is.numeric(x = genes)) {
